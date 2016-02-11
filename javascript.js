@@ -21,7 +21,7 @@ function calculator(sum1, sum2) //Calculates and prints simulatio
 { 
 	try
 	{
-		var totalOutcomes = ((sum1.maxSum+1)-sum1.minSum)*((sum2.maxSum+1)-sum2.minSum); //101 * 201
+		var totalOutcomes = ((sum1.maxSum+1)-sum1.minSum)*((sum2.maxSum+1)-sum2.minSum);
 		var simulationResultsPlayerOne = "Chance of player one winning is:  ";
 		var simulationResultsPlayerTwo = "Chance of player two winning is:  ";
 		var gatheredResults = " Winner is: Player one";
@@ -66,7 +66,7 @@ function calculator(sum1, sum2) //Calculates and prints simulatio
 
 		else
 		{
-			var winningOutcomes = (sum2.maxSum+1) * (sum1.maxSum-sum2.maxSum); 
+			var winningOutcomes = ((sum2.maxSum+1)-sum2.minSum) * ((sum1.maxSum-sum2.maxSum));
 			var outcomes = totalOutcomes - (stalemate+1); 
 			var equalOutcomes = (outcomes - winningOutcomes)*modifier; 
 			var winPercentage = (equalOutcomes + winningOutcomes)/totalOutcomes;
@@ -100,9 +100,9 @@ function classfunc(classOne, classTwo) //Function that adds class modifiers
 
 	else if(classOne.characterClass == "Paladin" && classTwo.characterClass != "Creep")  //has a 80% chance to subtract 40% to opponents maximum roll
 	{
-		classTwo.maxSum -= (classTwo.maxSum/100)*(40*0.8);
+		/*classTwo.maxSum -= (classTwo.maxSum/100)*(40*0.8);
 		if(classTwo.characterClass == "Rogue")
-			 classOne.maxSum += (classOne.maxSum/100)*30;
+			 classOne.maxSum += (classOne.maxSum/100)*30;*/
 	}
 	else if(classOne.characterClass == "Rogue" && classTwo.characterClass != "Creep")
     {
