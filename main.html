@@ -11,9 +11,9 @@
 			<form name="simulatorFields">
 				<div id="introduction">
 					Welcome to Idlerpg simulator
-				</div><br>
-				Risk vs Reward calculator (Coming soon!)<br>
-				Select class
+				</div>
+				<!--<label>Risk vs Reward calculator</label>-->
+				Select class 1:
 				<select name="player_one">
 	            	<option value="Wizard">Wizard</option>
 	            	<option value="Barbarian" selected>Barbarian</option>
@@ -21,6 +21,7 @@
 	            	<option value="Paladin" selected>Paladin</option>
 	            	<option value="Creep" selected>Creep/Dragon</option>
 	            </select>
+	            2:
 	            <select name="player_two">
 	            	<option value="Wizard">Wizard</option>
 	            	<option value="Barbarian" selected>Barbarian</option>
@@ -31,15 +32,15 @@
 				<div id="sum"> 
 					<br>
 					<p>Sum: </p>
-					<input placeholder="Sum" type="text" name="player1_sum">
-					<input placeholder="Sum" type="text" name="player2_sum">
+					<input placeholder="Sum" type="text" name="player1_sum" onkeydown = "if (event.keyCode == 13) document.getElementById('simulate_button').click()"/>
+					<input placeholder="Sum" type="text" name="player2_sum" onkeydown = "if (event.keyCode == 13) document.getElementById('simulate_button').click()"/>
 				</div>
 				<div id="life">
 					<p>Life: </p>
-					<input value="100" type="text" name="player1_life">
-					<input value="100" type="text" name="player2_life">
+					<input value="100" type="text" name="player1_life" onkeydown = "if (event.keyCode == 13) document.getElementById('simulate_button').click()">
+					<input value="100" type="text" name="player2_life" onkeydown = "if (event.keyCode == 13) document.getElementById('simulate_button').click()">
 				</div>
-				<button type="button" name="button_result" onclick="simulate()">Simulate</button>
+				<button type="button" name="button_result" id="simulate_button" onclick="simulate()">Simulate</button>
 			<p>Results:</p>
 			<div id="result"></div>
 			<div id="playerOneResults"></div>
@@ -47,7 +48,7 @@
 			<div id="chance"></div>
 		</form>
 			<footer>
-				! Jag tar ej ansvar för eventuella missberäkningar, Kontakt: 08-52507300
+				Kontakt: 08-52507300, 365 Dagar om året.
 			</footer>
 		</div>
 	</body>

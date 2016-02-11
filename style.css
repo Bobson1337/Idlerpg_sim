@@ -3,7 +3,7 @@ html {
 	font-weight: bold;
 	background-color: black;
 	color: white;
-	font-size: 18px;
+	font-size: 22px;
 }
 
 head {
@@ -15,6 +15,17 @@ body {
 
 footer {
 	margin-top: 20px;
+	color: #666666;
+}
+
+#introduction
+{
+	font-family: Book Antiqua;
+	font-weight: bold;
+	color: white;
+	font-size: 30px;
+	display: block;
+	margin-bottom: 2%;
 }
 
 #container {
@@ -36,7 +47,39 @@ footer {
 	color: #FF9999;
 }
 #chance {
+	display: inline-block;
 	background-color: black;
-	border: 1px solid white;
+	color: #FCC1D6;
+	padding: 5px;
 }
+label
+{
+	color: #c8c8c8;
+	display: block;
+	padding-bottom: 25px;
+}
+
+select
+{
+	display: inline-block;
+	height: 25px;
+	font-size: 15px;
+}
+
+input
+{
+	height: 20px;
+	font-size: 18px;
+}
+
+#simulate_button
+{
+	display: block;
+	margin-top: 1%;
+	font-size: 20px;
+	height: 25px;
+	width: 7%;
+}
+
+
 
