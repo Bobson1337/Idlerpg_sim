@@ -100,9 +100,9 @@ function classfunc(classOne, classTwo) //Function that adds class modifiers
 
 	else if(classOne.characterClass == "Paladin" && classTwo.characterClass != "Creep")  //has a 80% chance to subtract 40% to opponents maximum roll
 	{
-		/*classTwo.maxSum -= (classTwo.maxSum/100)*(40*0.8);
+		classTwo.maxSum -= (classTwo.maxSum/100)*(40*0.8);
 		if(classTwo.characterClass == "Rogue")
-			 classOne.maxSum += (classOne.maxSum/100)*30;*/
+			 classOne.maxSum += (classOne.maxSum/100)*30;
 	}
 	else if(classOne.characterClass == "Rogue" && classTwo.characterClass != "Creep")
     {
