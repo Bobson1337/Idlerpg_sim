@@ -1,0 +1,42 @@
+html {
+	font-family: Book Antiqua;
+	font-weight: bold;
+	background-color: black;
+	color: white;
+	font-size: 18px;
+}
+
+head {
+}
+
+body {
+	padding-left: 5px;
+}
+
+footer {
+	margin-top: 20px;
+}
+
+#container {
+	position: relative;
+	color: #FF9999;
+}
+
+#player_one {
+	display: inline-block;
+	color: green;
+}
+#player_two {
+	display: inline-block;
+}
+#sum {
+	color: #FF9999;
+}
+#life {
+	color: #FF9999;
+}
+#chance {
+	background-color: black;
+	border: 1px solid white;
+}
+

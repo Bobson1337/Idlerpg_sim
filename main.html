@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script type="text/javascript" src="javascript.js"></script>
+		<meta charset="UTF-8">
+		<title>Simulator</title>
+	</head>
+	<body>
+		<div id="container">
+			<form name="simulatorFields">
+				<div id="introduction">
+					Welcome to Idlerpg simulator
+				</div><br>
+				Risk vs Reward calculator (Coming soon!)<br>
+				Select class
+				<select name="player_one">
+	            	<option value="Wizard">Wizard</option>
+	            	<option value="Barbarian" selected>Barbarian</option>
+	            	<option value="Rogue" selected>Rogue</option>
+	            	<option value="Paladin" selected>Paladin</option>
+	            	<option value="Creep" selected>Creep/Dragon</option>
+	            </select>
+	            <select name="player_two">
+	            	<option value="Wizard">Wizard</option>
+	            	<option value="Barbarian" selected>Barbarian</option>
+	            	<option value="Rogue" selected>Rogue</option>
+	            	<option value="paladin" selected>Paladin</option>
+	            	<option value="Creep" selected>Creep/Dragon</option>
+	            </select>
+				<div id="sum"> 
+					<br>
+					<p>Sum: </p>
+					<input placeholder="Sum" type="text" name="player1_sum">
+					<input placeholder="Sum" type="text" name="player2_sum">
+				</div>
+				<div id="life">
+					<p>Life: </p>
+					<input value="100" type="text" name="player1_life">
+					<input value="100" type="text" name="player2_life">
+				</div>
+				<button type="button" name="button_result" onclick="simulate()">Simulate</button>
+			<p>Results:</p>
+			<div id="result"></div>
+			<div id="playerOneResults"></div>
+			<div id="playerTwoResults"></div>
+			<div id="chance"></div>
+		</form>
+			<footer>
+				! Jag tar ej ansvar för eventuella missberäkningar, Kontakt: 08-52507300
+			</footer>
+		</div>
+	</body>
+</html>
