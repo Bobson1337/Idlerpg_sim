@@ -24,7 +24,7 @@ function calculator(sum1, sum2) //Calculates and prints simulatio
 		var totalOutcomes = ((sum1.maxSum+1)-sum1.minSum)*((sum2.maxSum+1)-sum2.minSum);
 		var simulationResultsPlayerOne = "Chance of player one winning is:  ";
 		var simulationResultsPlayerTwo = "Chance of player two winning is:  ";
-		var gatheredResults = "The winner is: Player one (" + sum2.characterClass + ")";
+		var gatheredResults = "The winner is: Player one (" + sum1.characterClass + ")";
 		var modifier = 0.5;
 
 	 	//src = "http://www.probabilityformula.org/"
