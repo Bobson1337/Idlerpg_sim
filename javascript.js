@@ -3,12 +3,13 @@ function simulate() { //Main
 	var playerTwo = document.simulatorFields.player_two.value;
 	var playerOneSum = Number(document.simulatorFields.player1_sum.value);
 	var playerTwoSum = Number(document.simulatorFields.player2_sum.value);
+	var playerTwoMinSum = Number(document.simulatorFields.player2_minsum.value);
 	var playerOneLife = Number(document.simulatorFields.player1_life.value)/100;
 	var playerTwoLife = Number(document.simulatorFields.player2_life.value)/100;
 	var playerOneRoll = Math.floor((Math.random() * (playerOneSum + 1)));
 	var playerTwoRoll = Math.floor((Math.random() * (playerTwoSum + 1)));
 	var characterOneClass = new character(0, playerOneSum, playerOneLife, playerOne);
-	var characterTwoClass = new character(0, playerTwoSum, playerTwoLife, playerTwo);
+	var characterTwoClass = new character(playerTwoMinSum, playerTwoSum, playerTwoLife, playerTwo);
 	document.getElementById("result").innerHTML = "The " + playerOne + " rolls: " + playerOneRoll;
 	document.getElementById("playerOneResults").innerHTML = 'The ' + playerTwo + " rolls: " + playerTwoRoll;
 
@@ -24,7 +25,8 @@ function calculator(sum1, sum2) //Calculates and prints simulatio
 		var totalOutcomes = ((sum1.maxSum+1)-sum1.minSum)*((sum2.maxSum+1)-sum2.minSum);
 		var simulationResultsPlayerOne = "Chance of player one winning is:  ";
 		var simulationResultsPlayerTwo = "Chance of player two winning is:  ";
-		var gatheredResults = "The winner is: Player one (" + sum1.characterClass + ")";
+		//var gatheredResults = "The winner is: Player one (" + sum1.characterClass + ")";
+		var gatheredResults = "";
 		var modifier = 0.5;
 
 	 	//src = "http://www.probabilityformula.org/"
@@ -58,6 +60,18 @@ function calculator(sum1, sum2) //Calculates and prints simulatio
 		{
 			modifier = 0.375;
 		}
+		if(sum2.characterClass == "Dragon" && sum1.characterClass != "Creep") //Adds Rogue modifier
+		{
+			/*var sumcalc = sum2.maxSum+sum2.minSum;
+			var digits = sumcalc.toString().length;
+			var divider = 1;
+			for(var lol = 0;lol < digits;lol++)
+			{
+				divider*=10;
+			}
+			modifier = (sumcalc)/2*divider;*/
+			modifier -=((0.5)*(sum2.minSum/sum2.maxSum));
+		}
 
 		if(sum1.minSum>sum2.maxSum) //If rogue/certain dragons minsum is higher than opponent maxsum.
 		{
@@ -83,7 +97,7 @@ function calculator(sum1, sum2) //Calculates and prints simulatio
 
 function classfunc(classOne, classTwo) //Function that adds class modifiers
 {
-	if(classOne.characterClass == "Creep"){}
+	if(classOne.characterClass == "Creep" || classOne.characterClass == "Dragon"){}
 	else if(classOne.characterClass == "Barbarian" && classTwo.characterClass != "Creep") //adds 30% to maximum roll
 	{
 		classOne.maxSum += (classOne.maxSum/100)*30;
