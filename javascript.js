@@ -70,7 +70,7 @@ function calculator(sum1, sum2) //Calculates and prints simulatio
 				divider*=10;
 			}
 			modifier = (sumcalc)/2*divider;*/
-			modifier -=((0.5)*(sum2.minSum/sum2.maxSum));
+			modifier -=((0.5)*(sum2.minSum/sum1.maxSum));
 		}
 
 		if(sum1.minSum>sum2.maxSum) //If rogue/certain dragons minsum is higher than opponent maxsum.
